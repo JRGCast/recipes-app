@@ -8,7 +8,7 @@ function Profile() {
 
   function handleExit() {
     localStorage.clear();
-    history.push('/');
+    history.push('/recipes-app');
   }
   const { email } = JSON.parse(localStorage.getItem('user')) || '';
   return (
@@ -18,12 +18,12 @@ function Profile() {
         Usuário:
         <span data-testid="profile-email">{email}</span>
       </p>
-      <Link to="/receitas-feitas">
+      <Link to="/recipes-app/receitas-feitas">
         <button type="button" data-testid="profile-done-btn">
           Receitas Feitas
         </button>
       </Link>
-      <Link to="/receitas-favoritas">
+      <Link to="/recipes-app/receitas-favoritas">
         <button type="button" data-testid="profile-favorite-btn">
           Receitas Favoritas
         </button>

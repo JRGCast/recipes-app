@@ -32,7 +32,7 @@ function ExplorerFoodsIngredients() {
               img={ `https://www.themealdb.com/images/ingredients/${item.strIngredient}-Small.png` }
               index={ index }
               onClick={ () => setRedirectToFoods({
-                pathname: '/comidas',
+                pathname: '/recipes-app/comidas',
                 state: { fromExplorerFoodsIngredients: true,
                   ingredient: item.strIngredient },
               }) }

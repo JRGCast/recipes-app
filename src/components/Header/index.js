@@ -18,7 +18,7 @@ function Header(props) {
   return (
     <>
       <header className="header-container">
-        <Link to="/perfil">
+        <Link to="/recipes-app/perfil">
           <img src={ profile } alt="Profile" data-testid="profile-top-btn" />
         </Link>
 

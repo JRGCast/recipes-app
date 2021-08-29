@@ -50,7 +50,7 @@ function DoneRecipes() {
     if (recipe.type === 'comida') {
       return (
         <div key={ recipe.name }>
-          <Link to={ `/comidas/${recipe.id}` }>
+          <Link to={ `/recipes-app/comidas/${recipe.id}` }>
             <img
               style={ { width: '165px' } }
               alt={ recipe.name }
@@ -58,7 +58,7 @@ function DoneRecipes() {
               data-testid={ `${index}-horizontal-image` }
             />
           </Link>
-          <Link to={ `/comidas/${recipe.id}` }>
+          <Link to={ `/recipes-app/comidas/${recipe.id}` }>
             <h2 data-testid={ `${index}-horizontal-name` }>{ recipe.name }</h2>
           </Link>
           <span
@@ -95,7 +95,7 @@ function DoneRecipes() {
     if (recipe.type === 'bebida') {
       return (
         <div key={ recipe.name }>
-          <Link to={ `/bebidas/${recipe.id}` }>
+          <Link to={ `/recipes-app/bebidas/${recipe.id}` }>
             <img
               style={ { width: '165px' } }
               alt={ recipe.name }
@@ -103,7 +103,7 @@ function DoneRecipes() {
               data-testid={ `${index}-horizontal-image` }
             />
           </Link>
-          <Link to={ `/bebidas/${recipe.id}` }>
+          <Link to={ `/recipes-app/bebidas/${recipe.id}` }>
             <h2 data-testid={ `${index}-horizontal-name` }>{ recipe.name }</h2>
           </Link>
           <span

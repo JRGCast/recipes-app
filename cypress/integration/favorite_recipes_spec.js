@@ -16,14 +16,14 @@ describe('Favorite recipes screen', () => {
       type: 'bebida',
       area: '',
       category: 'Cocktail',
-      alcoholicOrNot:  'Alcoholic',
+      alcoholicOrNot: 'Alcoholic',
       name: 'Aquamarine',
       image: 'https://www.thecocktaildb.com/images/media/drink/zvsre31572902738.jpg',
     },
   ];
 
   beforeEach(() => {
-    cy.visit('http://localhost:3000/receitas-favoritas', {
+    cy.visit('http://localhost:3000/recipes-app/receitas-favoritas', {
       onBeforeLoad(win) {
         win.localStorage.setItem('favoriteRecipes', JSON.stringify(favoriteRecipes));
       },
@@ -99,7 +99,7 @@ describe('Favorite recipes screen', () => {
 
       cy.window().then((win) => {
         cy.wrap(win.navigator.clipboard.readText())
-          .should('eq', 'http://localhost:3000/comidas/52771');
+          .should('eq', 'http://localhost:3000/recipes-app/comidas/52771');
       });
     });
   });

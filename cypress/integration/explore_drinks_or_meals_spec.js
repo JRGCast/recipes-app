@@ -4,7 +4,7 @@ const fetchMock = require('../mocks/fetch');
 
 describe('70 - Implemente os elementos da tela de explorar bebidas ou comidas respeitando os atributos descritos no protótipo', () => {
   it('Tem os data-testids corretos para a tela de explorar comidas', () => {
-    cy.visit('http://localhost:3000/explorar/comidas');
+    cy.visit('http://localhost:3000/recipes-app/explorar/comidas');
 
     cy.get('[data-testid="explore-by-ingredient"]');
     cy.get('[data-testid="explore-by-area"]');
@@ -12,7 +12,7 @@ describe('70 - Implemente os elementos da tela de explorar bebidas ou comidas re
   });
 
   it('Tem os data-testids corretos para a tela de explorar bebidas', () => {
-    cy.visit('http://localhost:3000/explorar/bebidas');
+    cy.visit('http://localhost:3000/recipes-app/explorar/bebidas');
 
     cy.get('[data-testid="explore-by-ingredient"]');
     cy.get('[data-testid="explore-by-area"]').should('not.exist');
@@ -22,7 +22,7 @@ describe('70 - Implemente os elementos da tela de explorar bebidas ou comidas re
 
 describe('71 - Desenvolva 3 botões: um para explorar por ingrediente, um para explorar por local de origem e um para pegar uma receita aleatória', () => {
   it('Tem os botões "Por Ingredientes", "Por Local de Origem" e "Me Surpreenda!" para a tela de explorar comidas', () => {
-    cy.visit('http://localhost:3000/explorar/comidas');
+    cy.visit('http://localhost:3000/recipes-app/explorar/comidas');
 
     cy.get('[data-testid="explore-by-ingredient"]').contains('Por Ingredientes');
     cy.get('[data-testid="explore-by-area"]').contains('Por Local de Origem');
@@ -30,7 +30,7 @@ describe('71 - Desenvolva 3 botões: um para explorar por ingrediente, um para e
   });
 
   it('Tem apenas os botões "Por Ingredientes" e "Me Surpreenda!" para a tela de explorar bebidas', () => {
-    cy.visit('http://localhost:3000/explorar/bebidas');
+    cy.visit('http://localhost:3000/recipes-app/explorar/bebidas');
 
     cy.get('[data-testid="explore-by-ingredient"]').contains('Por Ingredientes');
     cy.get('[data-testid="explore-by-area"]').should('not.exist');
@@ -40,14 +40,14 @@ describe('71 - Desenvolva 3 botões: um para explorar por ingrediente, um para e
 
 describe('72 - Redirecione a pessoa usuária ao clicar em "Por Ingredientes", a rota deve mudar para a tela de explorar por ingredientes', () => {
   it('Ao clicar no botão "Por Ingredientes" da tela de explorar comidas a rota muda para a página de explorar comidas por ingrediente', () => {
-    cy.visit('http://localhost:3000/explorar/comidas');
+    cy.visit('http://localhost:3000/recipes-app/explorar/comidas');
 
     cy.get('[data-testid="explore-by-ingredient"]').click();
     cy.location().should((loc) => expect(loc.pathname).to.eq('/explorar/comidas/ingredientes'));
   });
 
   it('Ao clicar no botão "Explorar Bebidas" da tela de explorar bebidas a rota muda para a página de explorar bebidas por ingrediente', () => {
-    cy.visit('http://localhost:3000/explorar/bebidas');
+    cy.visit('http://localhost:3000/recipes-app/explorar/bebidas');
 
     cy.get('[data-testid="explore-by-ingredient"]').click();
     cy.location().should((loc) => expect(loc.pathname).to.eq('/explorar/bebidas/ingredientes'));
@@ -56,7 +56,7 @@ describe('72 - Redirecione a pessoa usuária ao clicar em "Por Ingredientes", a 
 
 describe('73 - Redirecione a pessoa usuária ao clicar em "Por Local de Origem", a rota deve mudar para tela de explorar por local de origem', () => {
   it('A rota deve mudar para tela de explorar por local de origem', () => {
-    cy.visit('http://localhost:3000/explorar/comidas');
+    cy.visit('http://localhost:3000/recipes-app/explorar/comidas');
 
     cy.get('[data-testid="explore-by-area"]').click();
     cy.location().should((loc) => expect(loc.pathname).to.eq('/explorar/comidas/area'));
@@ -65,7 +65,7 @@ describe('73 - Redirecione a pessoa usuária ao clicar em "Por Local de Origem",
 
 describe('74 - Redirecione a pessoa usuária ao clicar em "Me Surpreenda!", a rota deve mudar para a tela de detalhes de uma receita, que deve ser escolhida de forma aleatória através da API', () => {
   it('Ao clicar no botão "Por Ingredientes" da tela de explorar comidas a rota muda para a página de detalhes de uma comida aleatória', () => {
-    cy.visit('http://localhost:3000/explorar/comidas', {
+    cy.visit('http://localhost:3000/recipes-app/explorar/comidas', {
       onBeforeLoad(win) {
         win.fetch = fetchMock;
       },
@@ -76,7 +76,7 @@ describe('74 - Redirecione a pessoa usuária ao clicar em "Me Surpreenda!", a ro
   });
 
   it('Ao clicar no botão "Explorar Bebidas" da tela de explorar bebidas a rota muda para a página de detalhes de uma bebida aleatória', () => {
-    cy.visit('http://localhost:3000/explorar/bebidas', {
+    cy.visit('http://localhost:3000/recipes-app/explorar/bebidas', {
       onBeforeLoad(win) {
         win.fetch = fetchMock;
       },

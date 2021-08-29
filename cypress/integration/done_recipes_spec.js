@@ -18,7 +18,7 @@ describe('Done recipes screen', () => {
       type: 'bebida',
       area: '',
       category: 'Cocktail',
-      alcoholicOrNot:  'Alcoholic',
+      alcoholicOrNot: 'Alcoholic',
       name: 'Aquamarine',
       image: 'https://www.thecocktaildb.com/images/media/drink/zvsre31572902738.jpg',
       doneDate: '23/06/2020',
@@ -27,7 +27,7 @@ describe('Done recipes screen', () => {
   ];
 
   beforeEach(() => {
-    cy.visit('http://localhost:3000/receitas-feitas', {
+    cy.visit('http://localhost:3000/recipes-app/receitas-feitas', {
       onBeforeLoad(win) {
         win.localStorage.setItem('doneRecipes', JSON.stringify(doneRecipes));
       },
@@ -103,7 +103,7 @@ describe('Done recipes screen', () => {
 
       cy.window().then((win) => {
         cy.wrap(win.navigator.clipboard.readText())
-          .should('eq', 'http://localhost:3000/comidas/52771');
+          .should('eq', 'http://localhost:3000/recipes-app/comidas/52771');
       });
     });
   });

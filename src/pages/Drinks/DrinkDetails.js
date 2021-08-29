@@ -121,7 +121,7 @@ function DrinkDetails(props) {
   return (
     <>
       { shouldRedirect && <Redirect
-        to={ { pathname: `/bebidas/${id}/in-progress`,
+        to={ { pathname: `/recipes-app/bebidas/${id}/in-progress`,
         } }
       /> }
       {strDrink && <DrinkDetailsInfo

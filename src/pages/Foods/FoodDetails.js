@@ -118,7 +118,7 @@ function FoodDetails(props) {
 
   return (
     <>
-      { shouldRedirect && <Redirect to={ `/comidas/${id}/in-progress` } /> }
+      { shouldRedirect && <Redirect to={ `/recipes-app/comidas/${id}/in-progress` } /> }
       {strMeal && <FoodDetailsInfo
         copied={ copied }
         strMeal={ strMeal }

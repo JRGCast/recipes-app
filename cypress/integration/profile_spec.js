@@ -2,7 +2,7 @@
 
 describe('Profile screen', () => {
   beforeEach(() => {
-    cy.visit('http://localhost:3000/perfil', {
+    cy.visit('http://localhost:3000/recipes-app/perfil', {
       onBeforeLoad(win) {
         win.localStorage.setItem('user', '{ "email": "email@mail.com" }');
         win.localStorage.setItem('mealsToken', '1');

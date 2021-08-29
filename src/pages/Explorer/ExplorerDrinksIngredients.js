@@ -31,7 +31,7 @@ function ExplorerDrinksIngredients() {
               img={ `https://www.thecocktaildb.com/images/ingredients/${item.strIngredient1}-Small.png` }
               index={ index }
               onClick={ () => setRedirectToDrinks({
-                pathname: '/bebidas',
+                pathname: '/recipes-app/bebidas',
                 state: { fromExplorerDrinksIngredients: true,
                   ingredient: item.strIngredient1 },
               }) }
