@@ -1,0 +1,32 @@
+input:hover, label {
+  cursor: pointer;
+}
+
+input:checked + label {
+  text-decoration: line-through;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.ol-styled {
+  display: flex;
+  flex-flow: column wrap;
+  list-style-position: inside;
+  text-align: center;
+}
+
+.button-container {
+  display: flex;
+}
+
+.button-container > button {
+  margin: 2px;
+  padding: 5px;
+}
+
+/* .unordered-list > li::before {
+  content: '➡️'; Insert content that looks like bullets
+  padding-right: 8px;
+} */
