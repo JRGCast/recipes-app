@@ -36,7 +36,7 @@ function Login() {
 
   return (
     <>
-      { redirect && <Redirect to="/comidas" /> }
+      { redirect && <Redirect to="/recipes-app/comidas" /> }
       <div className="login-container">
         <div className="login-img-container">
           <img className="login-img-logo" src={ loginImg } alt="logo" />
